@@ -7,4 +7,10 @@ export class Extension {
     this.description = description;
     this.#isActive = isActive;
   }
+  setActive() {
+    this.#isActive = !this.#isActive;
+  }
+  getActive() {
+    return this.#isActive;
+  }
 }
