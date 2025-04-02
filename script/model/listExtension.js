@@ -30,4 +30,13 @@ export class ListExtension {
       return item;
     });
   }
+  getExtensionState(inputId) {
+    let extensionState;
+    this.extensionList.forEach((item) => {
+      if (item.id === inputId) {
+        extensionState = item.getActive();
+      }
+    });
+    return extensionState;
+  }
 }
