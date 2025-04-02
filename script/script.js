@@ -27,3 +27,6 @@ console.log(listExtension);
 
 console.log(listExtension.filterActive());
 console.log(listExtension.filterInactive());
+
+console.log(listExtension);
+listExtension.updateState(1);

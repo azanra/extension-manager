@@ -22,4 +22,12 @@ export class ListExtension {
     );
     return inactiveList;
   }
+  updateState(inputId) {
+    this.extensionList.map((item) => {
+      if (item.id === inputId) {
+        item.setActive();
+      }
+      return item;
+    });
+  }
 }
