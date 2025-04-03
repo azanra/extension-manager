@@ -32,3 +32,5 @@ console.log(listExtension);
 listExtension.updateState(1);
 
 console.log(listExtension.getExtensionState(1));
+
+console.log(listExtension.getExtensionList());

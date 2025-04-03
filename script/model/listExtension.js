@@ -39,4 +39,7 @@ export class ListExtension {
     });
     return extensionState;
   }
+  getExtensionList() {
+    return this.extensionList;
+  }
 }
