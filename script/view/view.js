@@ -19,4 +19,11 @@ class View {
       element.textContent = elementTextContent;
     }
   }
+  static createElement(element, customAttribute) {
+    const parentElement = document.querySelector(element.parentElement);
+    const newElement = document.createElement(element.elementType);
+    this.setMultipleAttr(element.attribute, newElement, customAttribute);
+    this.setTextContent(newElement, element.textContent);
+    parentElement.append(newElement);
+  }
 }
