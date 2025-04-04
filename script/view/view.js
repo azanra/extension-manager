@@ -14,4 +14,9 @@ class View {
       }
     }
   }
+  static setTextContent(element, elementTextContent) {
+    if (elementTextContent) {
+      element.textContent = elementTextContent;
+    }
+  }
 }
