@@ -5,6 +5,7 @@ export const attributeElement = {
     attribute: {
       class: "extensionContainer",
     },
+    uniqueParent: false,
   },
   extension: {
     parentElement: ".extensionContainer",
@@ -13,5 +14,15 @@ export const attributeElement = {
       id: "extension",
       class: "extension",
     },
+    uniqueParent: false,
+  },
+  imageContainer: {
+    parentElement: "#extension",
+    elementType: "div",
+    attribute: {
+      id: "imageContainer",
+      class: "imageContainer",
+    },
+    uniqueParent: true,
   },
 };
