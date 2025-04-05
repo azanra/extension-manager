@@ -1,3 +1,5 @@
+import { Extension } from "./extension.js";
+
 export class ListExtension {
   #extensionList;
 
@@ -5,8 +7,17 @@ export class ListExtension {
     this.#extensionList = [];
   }
 
-  addToTheList(extensionItem) {
-    this.#extensionList.push(extensionItem);
+  addToTheList(extensionArr) {
+    extensionArr.forEach((item) => {
+      let extensionItem = new Extension(
+        item.id,
+        item.src,
+        item.name,
+        item.description,
+        item.isActive
+      );
+      this.#extensionList.push(extensionItem);
+    });
   }
 
   removeExtension(inputId) {
