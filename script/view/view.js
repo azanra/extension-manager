@@ -25,9 +25,9 @@ export class View {
   }
 
   static createElement(element, customAttribute) {
-    const parentElement = View.referenceParent(element, customAttribute);
+    const parentElement = View.referenceParent(element, customAttribute?.id);
     const newElement = document.createElement(element.elementType);
-    View.setMultipleAttr(element.attribute, newElement, customAttribute);
+    View.setMultipleAttr(element.attribute, newElement, customAttribute?.id);
     View.setTextContent(newElement, element.textContent);
     parentElement.append(newElement);
   }
@@ -43,8 +43,14 @@ export class View {
   }
 
   createExtensionCart(extension) {
-    View.createElement(attributeElement.extension, extension.id);
-    View.createElement(attributeElement.imageContainer, extension.id);
+    View.createElement(attributeElement.extension, extension);
+    View.createElement(attributeElement.imageContainer, extension);
+    View.appendSrcToImage(extension.src, attributeElement.image);
+    View.createElement(attributeElement.image, extension);
+  }
+
+  static appendSrcToImage(extensionObject, elementAttributeObject) {
+    elementAttributeObject.attribute.src = extensionObject;
   }
 
   displayExtension(extensionArray) {

@@ -25,4 +25,13 @@ export const attributeElement = {
     },
     uniqueParent: true,
   },
+  image: {
+    parentElement: "#imageContainer",
+    elementType: "img",
+    attribute: {
+      id: "extensionImg",
+      class: "extensionImg",
+    },
+    uniqueParent: true,
+  },
 };
