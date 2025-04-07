@@ -34,4 +34,31 @@ export const attributeElement = {
     },
     uniqueParent: true,
   },
+  infoContainer: {
+    parentElement: "#extension",
+    elementType: "div",
+    attribute: {
+      id: "infoContainer",
+      class: "infoContainer",
+    },
+    uniqueParent: true,
+  },
+  infoHeader: {
+    parentElement: "#infoContainer",
+    elementType: "h2",
+    attribute: {
+      id: "infoHeader",
+      class: "infoHeader",
+    },
+    uniqueParent: true,
+  },
+  infoBody: {
+    parentElement: "#infoContainer",
+    elementType: "p",
+    attribute: {
+      id: "infoBody",
+      class: "infoBody",
+    },
+    uniqueParent: true,
+  },
 };

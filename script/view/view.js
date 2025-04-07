@@ -42,17 +42,28 @@ export class View {
     }
   }
 
+  static addSrcAttribute(extensionAttribute, elementAttribute) {
+    elementAttribute.attribute.src = extensionAttribute.src;
+  }
+
+  static addNameAttribute(extensionAttribute, elementAttribute) {
+    elementAttribute.textContent = extensionAttribute.name;
+  }
+
+  static addDescriptionAttribute(extensionAttribute, elementAttribute) {
+    elementAttribute.textContent = extensionAttribute.description;
+  }
   createExtensionCart(extension) {
     View.createElement(attributeElement.extension, extension);
     View.createElement(attributeElement.imageContainer, extension);
-    View.appendSrcToImage(extension.src, attributeElement.image);
+    View.addSrcAttribute(extension, attributeElement.image);
     View.createElement(attributeElement.image, extension);
+    View.createElement(attributeElement.infoContainer, extension);
+    View.addNameAttribute(extension, attributeElement.infoHeader);
+    View.createElement(attributeElement.infoHeader, extension);
+    View.addDescriptionAttribute(extension, attributeElement.infoBody);
+    View.createElement(attributeElement.infoBody, extension);
   }
-
-  static appendSrcToImage(extensionObject, elementAttributeObject) {
-    elementAttributeObject.attribute.src = extensionObject;
-  }
-
   displayExtension(extensionArray) {
     View.createElement(attributeElement.extensionContainer);
     const extensionList = extensionArray.getExtensionList();
