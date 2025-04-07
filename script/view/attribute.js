@@ -61,4 +61,24 @@ export const attributeElement = {
     },
     uniqueParent: true,
   },
+  actionContainer: {
+    parentElement: "#extension",
+    elementType: "div",
+    attribute: {
+      id: "actionContainer",
+      class: "actionContainer",
+    },
+    uniqueParent: true,
+  },
+  removeBtn: {
+    parentElement: "#actionContainer",
+    elementType: "button",
+    attribute: {
+      type: "button",
+      id: "removeBtn",
+      class: "removeBtn",
+    },
+    textContent: "Remove",
+    uniqueParent: true,
+  },
 };

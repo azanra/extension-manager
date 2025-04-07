@@ -53,6 +53,7 @@ export class View {
   static addDescriptionAttribute(extensionAttribute, elementAttribute) {
     elementAttribute.textContent = extensionAttribute.description;
   }
+
   createExtensionCart(extension) {
     View.createElement(attributeElement.extension, extension);
     View.createElement(attributeElement.imageContainer, extension);
@@ -63,7 +64,10 @@ export class View {
     View.createElement(attributeElement.infoHeader, extension);
     View.addDescriptionAttribute(extension, attributeElement.infoBody);
     View.createElement(attributeElement.infoBody, extension);
+    View.createElement(attributeElement.actionContainer, extension);
+    View.createElement(attributeElement.removeBtn, extension);
   }
+
   displayExtension(extensionArray) {
     View.createElement(attributeElement.extensionContainer);
     const extensionList = extensionArray.getExtensionList();
