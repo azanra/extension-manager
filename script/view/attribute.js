@@ -81,4 +81,32 @@ export const attributeElement = {
     textContent: "Remove",
     uniqueParent: true,
   },
+  labelSwitch: {
+    parentElement: "#actionContainer",
+    elementType: "label",
+    attribute: {
+      id: "labelSwitch",
+      class: "labelSwitch",
+    },
+    uniqueParent: true,
+  },
+  toggleSwitch: {
+    parentElement: "#labelSwitch",
+    elementType: "input",
+    attribute: {
+      type: "checkbox",
+      id: "toggleSwitch",
+      class: "toggleSwitch",
+    },
+    uniqueParent: true,
+  },
+  toggleSlider: {
+    parentElement: "#labelSwitch",
+    elementType: "span",
+    attribute: {
+      id: "toggleSlider",
+      class: "toggleSlider",
+    },
+    uniqueParent: true,
+  },
 };

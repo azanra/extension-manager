@@ -66,6 +66,9 @@ export class View {
     View.createElement(attributeElement.infoBody, extension);
     View.createElement(attributeElement.actionContainer, extension);
     View.createElement(attributeElement.removeBtn, extension);
+    View.createElement(attributeElement.labelSwitch, extension);
+    View.createElement(attributeElement.toggleSwitch, extension);
+    View.createElement(attributeElement.toggleSlider, extension);
   }
 
   displayExtension(extensionArray) {
