@@ -1,10 +1,6 @@
 import { attributeElement } from "./attribute.js";
 
 export class View {
-  constructor() {
-    this.extensionListContainer = document.querySelector(".mainContent");
-  }
-
   static setMultipleAttr(attributeObject, element, customAttribute) {
     for (let attribute in attributeObject) {
       if (attribute === "id" && customAttribute !== undefined) {
@@ -54,6 +50,11 @@ export class View {
     elementAttribute.textContent = extensionAttribute.description;
   }
 
+  static deleteList() {
+    const extensionContainer = document.querySelector(".extensionContainer");
+    extensionContainer.remove();
+  }
+
   createExtensionCart(extension) {
     View.createElement(attributeElement.extension, extension);
     View.createElement(attributeElement.imageContainer, extension);
@@ -69,13 +70,5 @@ export class View {
     View.createElement(attributeElement.labelSwitch, extension);
     View.createElement(attributeElement.toggleSwitch, extension);
     View.createElement(attributeElement.toggleSlider, extension);
-  }
-
-  displayExtension(extensionArray) {
-    View.createElement(attributeElement.extensionContainer);
-    const extensionList = extensionArray.getExtensionList();
-    extensionList.map((item) => {
-      this.createExtensionCart(item);
-    });
   }
 }
