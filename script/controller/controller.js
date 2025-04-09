@@ -54,6 +54,7 @@ export class Controller {
         View.deleteList();
         this.displayExtension(this.listExtension.getExtensionList());
         console.log(this.listExtension.getExtensionList());
+        document.querySelector("#allOption").checked = true;
       });
     });
   }
