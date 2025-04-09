@@ -8,6 +8,7 @@ export class Controller {
     this.displayExtension(listExtension.getExtensionList());
     this.activeFilter();
     this.inactiveFilter();
+    this.allFilter();
   }
   displayExtension(extensionArray) {
     View.createElement(attributeElement.extensionContainer);
@@ -32,6 +33,15 @@ export class Controller {
       const inactiveList = this.listExtension.filterInactive();
       console.log(inactiveList);
       this.displayExtension(inactiveList);
+    });
+  }
+  allFilter() {
+    const allOption = document.querySelector("#allOption");
+    allOption.addEventListener("click", () => {
+      View.deleteList();
+      const extensionList = this.listExtension.getExtensionList();
+      console.log(extensionList);
+      this.displayExtension(extensionList);
     });
   }
 }
