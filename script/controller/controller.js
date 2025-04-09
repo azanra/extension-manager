@@ -16,6 +16,7 @@ export class Controller {
     extensionList.map((item) => {
       this.view.createExtensionCart(item);
     });
+    this.removeExtension();
   }
   activeFilter() {
     const activeOption = document.querySelector("#activeOption");
@@ -42,6 +43,18 @@ export class Controller {
       const extensionList = this.listExtension.getExtensionList();
       console.log(extensionList);
       this.displayExtension(extensionList);
+    });
+  }
+  removeExtension() {
+    const removeBtn = document.querySelectorAll(".removeBtn");
+    removeBtn.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const id = View.getId(btn);
+        this.listExtension.removeExtension(id);
+        View.deleteList();
+        this.displayExtension(this.listExtension.getExtensionList());
+        console.log(this.listExtension.getExtensionList());
+      });
     });
   }
 }
