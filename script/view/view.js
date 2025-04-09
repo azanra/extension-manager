@@ -55,6 +55,12 @@ export class View {
     extensionContainer.remove();
   }
 
+  static getId(element) {
+    const idElement = element.id;
+    const id = idElement.split("-");
+    return Number(id[1]);
+  }
+
   createExtensionCart(extension) {
     View.createElement(attributeElement.extension, extension);
     View.createElement(attributeElement.imageContainer, extension);
