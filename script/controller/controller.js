@@ -7,6 +7,7 @@ export class Controller {
     this.view = new View();
     this.displayExtension(listExtension.getExtensionList());
     this.activeFilter();
+    this.inactiveFilter();
   }
   displayExtension(extensionArray) {
     View.createElement(attributeElement.extensionContainer);
@@ -18,10 +19,19 @@ export class Controller {
   activeFilter() {
     const activeOption = document.querySelector("#activeOption");
     activeOption.addEventListener("click", () => {
+      View.deleteList();
       const activeList = this.listExtension.filterActive();
       console.log(activeList);
-      View.deleteList();
       this.displayExtension(activeList);
+    });
+  }
+  inactiveFilter() {
+    const inactiveOption = document.querySelector("#inactiveOption");
+    inactiveOption.addEventListener("click", () => {
+      View.deleteList();
+      const inactiveList = this.listExtension.filterInactive();
+      console.log(inactiveList);
+      this.displayExtension(inactiveList);
     });
   }
 }
