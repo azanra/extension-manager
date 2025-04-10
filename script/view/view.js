@@ -50,6 +50,16 @@ export class View {
     elementAttribute.textContent = extensionAttribute.description;
   }
 
+  static addExtensionStateAttribute(
+    extensionAttribute,
+    elementAttribute,
+    extensionList
+  ) {
+    const extensionId = extensionAttribute.id;
+    const extensionState = extensionList.getExtensionState(extensionId);
+    elementAttribute.attribute.checked = extensionState;
+  }
+
   static deleteList() {
     const extensionContainer = document.querySelector(".extensionContainer");
     extensionContainer.remove();
@@ -61,7 +71,7 @@ export class View {
     return Number(id[1]);
   }
 
-  createExtensionCart(extension) {
+  createExtensionCart(extension, extensionList) {
     View.createElement(attributeElement.extension, extension);
     View.createElement(attributeElement.imageContainer, extension);
     View.addSrcAttribute(extension, attributeElement.image);
@@ -74,6 +84,11 @@ export class View {
     View.createElement(attributeElement.actionContainer, extension);
     View.createElement(attributeElement.removeBtn, extension);
     View.createElement(attributeElement.labelSwitch, extension);
+    View.addExtensionStateAttribute(
+      extension,
+      attributeElement.toggleSwitch,
+      extensionList
+    );
     View.createElement(attributeElement.toggleSwitch, extension);
     View.createElement(attributeElement.toggleSlider, extension);
   }

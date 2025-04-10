@@ -14,7 +14,7 @@ export class Controller {
     View.createElement(attributeElement.extensionContainer);
     const extensionList = extensionArray;
     extensionList.map((item) => {
-      this.view.createExtensionCart(item);
+      this.view.createExtensionCart(item, this.listExtension);
     });
     this.removeExtension();
   }
