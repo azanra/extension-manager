@@ -57,7 +57,11 @@ export class View {
   ) {
     const extensionId = extensionAttribute.id;
     const extensionState = extensionList.getExtensionState(extensionId);
-    elementAttribute.attribute.checked = extensionState;
+    if (extensionState === true) {
+      elementAttribute.attribute.checked = extensionState;
+    } else {
+      delete elementAttribute.attribute.checked;
+    }
   }
 
   static deleteList() {
