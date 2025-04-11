@@ -51,6 +51,18 @@ export class Controller {
     });
   }
 
+  checkActiveFilter() {
+    if (document.querySelector("#allOption").checked) {
+      this.displayExtension(this.listExtension.getExtensionList());
+    }
+    if (document.querySelector("#activeOption").checked) {
+      this.displayExtension(this.listExtension.filterActive());
+    }
+    if (document.querySelector("#inactiveOption").checked) {
+      this.displayExtension(this.listExtension.filterInactive());
+    }
+  }
+
   removeExtension() {
     const removeBtn = document.querySelectorAll(".removeBtn");
     removeBtn.forEach((btn) => {
@@ -58,9 +70,8 @@ export class Controller {
         const id = View.getId(btn);
         this.listExtension.removeExtension(id);
         View.deleteList();
-        this.displayExtension(this.listExtension.getExtensionList());
+        this.checkActiveFilter();
         console.log(this.listExtension.getExtensionList());
-        document.querySelector("#allOption").checked = true;
       });
     });
   }
@@ -77,6 +88,8 @@ export class Controller {
         } else {
           toggle.removeAttribute("checked");
         }
+        View.deleteList();
+        this.checkActiveFilter();
       });
     });
   }
