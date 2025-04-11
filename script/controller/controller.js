@@ -10,6 +10,7 @@ export class Controller {
     this.inactiveFilter();
     this.allFilter();
   }
+
   displayExtension(extensionArray) {
     View.createElement(attributeElement.extensionContainer);
     const extensionList = extensionArray;
@@ -17,7 +18,9 @@ export class Controller {
       this.view.createExtensionCart(item, this.listExtension);
     });
     this.removeExtension();
+    this.updateState();
   }
+
   activeFilter() {
     const activeOption = document.querySelector("#activeOption");
     activeOption.addEventListener("click", () => {
@@ -27,6 +30,7 @@ export class Controller {
       this.displayExtension(activeList);
     });
   }
+
   inactiveFilter() {
     const inactiveOption = document.querySelector("#inactiveOption");
     inactiveOption.addEventListener("click", () => {
@@ -36,6 +40,7 @@ export class Controller {
       this.displayExtension(inactiveList);
     });
   }
+
   allFilter() {
     const allOption = document.querySelector("#allOption");
     allOption.addEventListener("click", () => {
@@ -45,6 +50,7 @@ export class Controller {
       this.displayExtension(extensionList);
     });
   }
+
   removeExtension() {
     const removeBtn = document.querySelectorAll(".removeBtn");
     removeBtn.forEach((btn) => {
@@ -55,6 +61,22 @@ export class Controller {
         this.displayExtension(this.listExtension.getExtensionList());
         console.log(this.listExtension.getExtensionList());
         document.querySelector("#allOption").checked = true;
+      });
+    });
+  }
+
+  updateState() {
+    const toggleSwitch = document.querySelectorAll(".toggleSwitch");
+    toggleSwitch.forEach((toggle) => {
+      toggle.addEventListener("click", () => {
+        const id = View.getId(toggle);
+        this.listExtension.updateState(id);
+        const extensionState = this.listExtension.getExtensionState(id);
+        if (extensionState === true) {
+          toggle.checked = true;
+        } else {
+          toggle.removeAttribute("checked");
+        }
       });
     });
   }
