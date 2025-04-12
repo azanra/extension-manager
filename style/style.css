@@ -33,17 +33,35 @@ body {
   font-size: var(--font-size);
   width: 100vw;
   height: 100vh;
+  box-sizing: border-box;
+  background: var(--Dark-Gradient);
 }
 
 .header {
+  background-color: var(--Neutral-600);
+  margin-top: 35px;
+  color: white;
+}
+
+.header,
+.mainHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--Neutral-600);
   width: 80%;
   margin-left: 10%;
   padding: 10px;
+}
+
+.mainHeader {
   color: white;
+  margin-top: 65px;
+  padding: 10px;
+}
+
+.mainHeaderText > p {
+  font-size: 30px;
+  font-weight: bold;
 }
 
 .header,
