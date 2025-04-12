@@ -30,4 +30,19 @@
 
 body {
   font-family: "notosans", var(--system-ui);
+  font-size: var(--font-size);
+  width: 100vw;
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--Neutral-600);
+  width: 80%;
+  margin-left: 10%;
+  padding: 10px;
+  border-radius: 15px;
+  color: white;
 }
