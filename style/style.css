@@ -43,6 +43,16 @@ body {
   width: 80%;
   margin-left: 10%;
   padding: 10px;
-  border-radius: 15px;
   color: white;
+}
+
+.header,
+.themeContainer > button {
+  border-radius: 15px;
+}
+
+.themeContainer > button {
+  background-color: var(--Neutral-700);
+  border: none;
+  padding: 10px 15px;
 }
