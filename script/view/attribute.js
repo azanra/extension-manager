@@ -16,8 +16,17 @@ export const attributeElement = {
     },
     uniqueParent: false,
   },
-  imageContainer: {
+  extensionHeader: {
     parentElement: "#extension",
+    elementType: "div",
+    attribute: {
+      id: "extensionHeader",
+      class: "extensionHeader",
+    },
+    uniqueParent: true,
+  },
+  imageContainer: {
+    parentElement: "#extensionHeader",
     elementType: "div",
     attribute: {
       id: "imageContainer",
@@ -35,7 +44,7 @@ export const attributeElement = {
     uniqueParent: true,
   },
   infoContainer: {
-    parentElement: "#extension",
+    parentElement: "#extensionHeader",
     elementType: "div",
     attribute: {
       id: "infoContainer",

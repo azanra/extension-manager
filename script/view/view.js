@@ -77,6 +77,7 @@ export class View {
 
   createExtensionCart(extension, extensionList) {
     View.createElement(attributeElement.extension, extension);
+    View.createElement(attributeElement.extensionHeader, extension);
     View.createElement(attributeElement.imageContainer, extension);
     View.addSrcAttribute(extension, attributeElement.image);
     View.createElement(attributeElement.image, extension);
