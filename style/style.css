@@ -111,3 +111,12 @@ input[type="radio"] {
 input[type="radio"]:checked {
   background-color: var(--Red-500);
 }
+
+.extensionContainer,
+span {
+  color: var(--Neutral-200);
+}
+
+.infoHeader {
+  color: var(--Neutral-0);
+}
