@@ -133,3 +133,9 @@ span {
   gap: 15px;
   width: 80%;
 }
+
+.extension {
+  background-color: var(--Neutral-800);
+  border-radius: 25px;
+  border: 1px solid var(--Neutral-600);
+}
