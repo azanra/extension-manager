@@ -107,3 +107,7 @@ input[type="radio"] {
   border-radius: 25px;
   padding: 20px 35px;
 }
+
+input[type="radio"]:checked {
+  background-color: var(--Red-500);
+}
