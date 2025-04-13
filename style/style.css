@@ -85,6 +85,20 @@ body {
   height: 50px;
 }
 
+.mainFilterContainer span {
+  position: relative;
+  bottom: 37.5px;
+  left: 40px;
+}
+
+.activeContainer > span {
+  left: 27.5px;
+}
+
+.inactiveContainer > span {
+  left: 20px;
+}
+
 input[type="radio"] {
   appearance: none;
   background-color: var(--Neutral-700);
