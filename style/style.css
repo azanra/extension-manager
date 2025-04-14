@@ -37,6 +37,11 @@ body {
   background: var(--Dark-Gradient);
 }
 
+h2,
+p {
+  margin: 0;
+}
+
 .header {
   background-color: var(--Neutral-600);
   margin-top: 35px;
@@ -138,4 +143,17 @@ span {
   background-color: var(--Neutral-800);
   border-radius: 25px;
   border: 1px solid var(--Neutral-600);
+}
+
+.extensionHeader {
+  display: flex;
+  align-items: center;
+}
+
+.imageContainer {
+  padding: 25px;
+}
+
+.infoContainer {
+  padding: 25px 10px 25px 0px;
 }
