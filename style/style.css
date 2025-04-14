@@ -182,3 +182,11 @@ span {
   height: 25px;
   margin: 0;
 }
+
+.toggleSlider {
+  position: relative;
+  display: inline-block;
+  bottom: 32px;
+  background-color: var(--Neutral-600);
+  border-radius: 25px;
+}
