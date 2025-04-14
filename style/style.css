@@ -157,3 +157,9 @@ span {
 .infoContainer {
   padding: 25px 10px 25px 0px;
 }
+
+.actionContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 20px 20px;
+}
