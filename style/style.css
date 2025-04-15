@@ -190,3 +190,13 @@ span {
   background-color: var(--Neutral-600);
   border-radius: 25px;
 }
+
+.toggleSlider::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 23px;
+  background-color: white;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
