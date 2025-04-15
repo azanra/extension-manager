@@ -200,3 +200,11 @@ span {
   border-radius: 50%;
   transition: all 0.3s;
 }
+
+.toggleSwitch:checked + .toggleSlider::after {
+  left: 30px;
+}
+
+.toggleSwitch:checked + .toggleSlider {
+  background-color: var(--Red-500);
+}
