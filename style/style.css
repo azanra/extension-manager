@@ -85,6 +85,10 @@ p {
   gap: 15px;
 }
 
+.mainFilterContainer input[type="radio"]:hover {
+  background-color: var(--Neutral-600);
+}
+
 .mainFilterContainer label {
   width: 100px;
   height: 50px;
@@ -97,7 +101,7 @@ p {
 }
 
 .activeContainer > span {
-  left: 27.5px;
+  left: 25px;
 }
 
 .inactiveContainer > span {
