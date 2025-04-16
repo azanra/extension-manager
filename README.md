@@ -13,10 +13,6 @@ This is a solution to the [Browser extensions manager UI challenge on Frontend M
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -27,91 +23,98 @@ Users should be able to:
 - Toggle extensions between active and inactive states
 - Filter active and inactive extensions
 - Remove extensions from the list
-- Select their color theme
-- View the optimal layout for the interface depending on their device's screen size
-- See hover and focus states for all interactive elements on the page
+- See hover for all interactive elements on the page
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![](./asset/images/exm-ui.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Preview](https://azanra.github.io/extension-manager/)
 
 ## My process
 
 ### Built with
 
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- Javascript Classes
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+Using class to construct an object, it field and method. Same as previous
+refactored project. it's not really a class but rather it converted into function constructor and prototype to set it's method.
 
-To see how you can add code snippets, see below:
+Using private property. By using private property that prefixed with hash
+it can only be accessed inside of the class that declares it. those will help to make sure that no one can access or rewrite it except on the getter and setter that i already defined.
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
+```js
+export class Extension {
+  #isActive;
 
-```css
-.proud-of-this-css {
-  color: papayawhip;
+  constructor(id, src, name, description, isActive) {
+    this.id = id;
+    this.src = src;
+    this.name = name;
+    this.description = description;
+    this.#isActive = isActive;
+  }
+
+  setActive() {
+    this.#isActive = !this.#isActive;
+  }
+
+  getActive() {
+    return this.#isActive;
+  }
 }
 ```
 
-```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
-};
+Creating custom radio and custom checkboxes. By hiding the default appearance of the input. and make the size of the input to match it parent to make the
+hitbox larger. and style the span or input to create a custom appearance.
+
+```css
+.labelSwitch,
+.toggleSlider,
+.toggleSwitch {
+  width: 50px;
+  height: 25px;
+  margin: 0;
+}
+
+.toggleSlider {
+  position: relative;
+  display: inline-block;
+  bottom: 32px;
+  background-color: var(--Neutral-600);
+  border-radius: 25px;
+}
+
+.toggleSlider::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 23px;
+  background-color: white;
+  top: 1px;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+.toggleSwitch:checked + .toggleSlider::after {
+  left: 30px;
+}
+
+.toggleSwitch:checked + .toggleSlider {
+  background-color: var(--Red-500);
+}
 ```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+- Add the functionality for theme switcher button
+- User should be able to add their own extension
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
-
-## Author
-
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- [Add text inside radio](https://stackoverflow.com/questions/45259139/how-to-put-text-inside-radio-button) - Baseline on how i style the filter radio element
+- [Checkbox as toggle button](https://medium.com/front-end-weekly/creating-a-toggle-switch-in-css-2d23e496d035) - Well explained step by step on how to create custom toggle button from checkbox input
